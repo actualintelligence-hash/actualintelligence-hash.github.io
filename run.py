@@ -6,8 +6,6 @@ import socketserver
 PORT = 8080
 
 
-
-
 def launch_simple_http_server(port=PORT):
   Handler = http.server.SimpleHTTPRequestHandler
 
@@ -24,6 +22,14 @@ def launch_tornado_http_server(port=PORT):
   import tornado.ioloop
   import tornado.web
 
+  class GetInTouchHandler(tornado.web.RequestHandler):
+      def get(self):
+        print(dir(self))
+      def post(self):
+        raise RuntimeError("Goodbye..")
+        print(dir(self))
+        self.write(f"Contacted")
+
   class UserHandler(tornado.web.RequestHandler):
       def get(self, username):
           # The 'username' argument comes from the regex capture group in the route
@@ -32,7 +38,8 @@ def launch_tornado_http_server(port=PORT):
   ### A routes data structure is essential for dynamic services.
   routes = [
     (r"/user/([^/]+)", UserHandler),
-    (r"/(.*)", tornado.web.StaticFileHandler, {"path": "concrete"})
+    (r"/contact", GetInTouchHandler),
+    (r"/(.*)", tornado.web.StaticFileHandler, {"path": "concrete"}),
   ]
 
   def make_app():
