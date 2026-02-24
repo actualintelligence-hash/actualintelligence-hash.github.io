@@ -23,10 +23,8 @@ $(function() {
     },
     submitSuccess: function($form, event) {
       event.preventDefault();
-      var url = "/contact";
-      // var url = (typeof CONTACT_ENDPOINT !== 'undefined') 
-      //   ? CONTACT_ENDPOINT 
-      //   : "/contact";
+
+      var url = "http://localhost:8080/contact";
       var name = $("input#name").val();
       var username = $("input#username").val();   // honeypot
       var email = $("input#email").val();

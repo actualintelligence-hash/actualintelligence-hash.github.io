@@ -35,9 +35,9 @@ collections:
 
 markdown: kramdown
 
-# Uncomment following line to use Formspree form ID based URL instead of email based URL
-# Details: https://help.formspree.io/hc/en-us/articles/360017735154-How-to-prevent-spam
-# formspree_form_path: "f/a_form_id"
+## _config.yml
+contact_endpoint: "http://localhost:8080/contact"   # dev
+# contact_endpoint: "/contact"                      # prod (same-domain Tornado)
 
 plugins:
   - jekyll-remote-theme
