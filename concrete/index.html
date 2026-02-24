@@ -885,10 +885,11 @@
 
 	  <!-- Contact form JavaScript -->
 	  <script src="./Agency Jekyll Theme Demo_files/jqBootstrapValidation.js"></script>
-	  <script src="./Agency Jekyll Theme Demo_files/contact_me.js"></script>
-
+	  {% comment %} <script src="./Agency Jekyll Theme Demo_files/contact_me.js"></script> {% endcomment %}
+    <script src="{{ '/assets/js/contact_custom.js' | relative_url }}"></script>
 	  <!-- Custom scripts for this template -->
 	  <script src="./Agency Jekyll Theme Demo_files/agency.min.js"></script>
-
+    
+    
   
 </body></html>

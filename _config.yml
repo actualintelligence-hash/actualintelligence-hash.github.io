@@ -35,5 +35,9 @@ collections:
 
 markdown: kramdown
 
+## _config.yml
+contact_endpoint: "http://localhost:8080/contact"   # dev
+# contact_endpoint: "/contact"                      # prod (same-domain Tornado)
+
 plugins:
   - jekyll-remote-theme
